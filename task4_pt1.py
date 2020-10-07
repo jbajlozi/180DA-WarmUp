@@ -1,3 +1,10 @@
+#References
+
+#https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_gui/py_video_display/py_video_display.html
+#https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_colorspaces/py_colorspaces.html#converting-colorspaces
+#https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_thresholding/py_thresholding.html#thresholding
+#https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_contour_features/py_contour_features.html#contour-features
+
 import cv2
 import numpy as np
 
@@ -34,7 +41,7 @@ while(1):
         area = cv2.contourArea(contour) 
 
         #area of 2500 to filter out any noise (my object was big enough)
-        if(area > 2500): 
+        if(area > 1500): 
             rect = cv2.minAreaRect(contour)
             box = cv2.boxPoints(rect)
             box = np.int0(box)

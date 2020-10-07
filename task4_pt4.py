@@ -1,3 +1,8 @@
+#References
+
+#https://code.likeagirl.io/finding-dominant-colour-on-an-image-b4e075f98097
+#https://github.com/opencv/opencv/blob/master/samples/python/kmeans.py
+
 import numpy as np 
 import cv2
 import matplotlib.pyplot as plt
