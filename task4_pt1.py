@@ -18,8 +18,8 @@ ap.add_argument("-v","--video",help="path to the (optional) video file")
 ap.add_argument("-b","--buffer",type=int, default=64,help="max buffer size")
 args = vars(ap.parse_args())
 
-greenLower = (29,86,6)
-greenUpper = (64,255,255)
+greenLower = (94,113,175)
+greenUpper = (179,255,255)
 pts = deque(maxlen=args['buffer'])
 
 if not args.get("video",False):
@@ -31,10 +31,10 @@ time.sleep(2.0)
 
 #Globals
 thickness_amt = 5
-height = int(cv2.get(cv2.CAP_PROP_FRAME_HEIGHT))
-width = int(cv2.get(cv2.CAP_PROP_FRAME_WIDTH))
-print(height)
-print(width)
+#height = int(cv2.get(cv2.CAP_PROP_FRAME_HEIGHT))
+#width = int(cv2.get(cv2.CAP_PROP_FRAME_WIDTH))
+#print(height)
+#print(width)
 
 while(1):
 
@@ -78,6 +78,7 @@ while(1):
         cv2.line(frame, pts[i-1], pts[i], (255,0,0), thickness)
     
     cv2.imshow("frame",frame)
+    cv2.imshow("mask",mask)
     key = cv2.waitKey(1) & 0xFF
     if key == ord("q"):
         break
